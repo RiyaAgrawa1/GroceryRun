@@ -158,14 +158,15 @@ class NoteActivity : AppCompatActivity() {
             ll.orientation = LinearLayout.HORIZONTAL
 
             val tv = TextView(this)
-            tv.setMaxWidth(350);
-            tv.setMinWidth(350);
+            tv.setMaxWidth(680);
+            tv.setMinWidth(680);
             tv.text = enterItem.text.toString()
 
             val removeButton = Button(this)
             removeButton.id = count                                            // id of remove buttons are even
             val icon = resources.getDrawable(R.drawable.ic_del_24, theme)
             removeButton.background = icon
+            removeButton.layoutParams = LinearLayout.LayoutParams(90, 100)
             removeButton.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(view: View) {
                     removeClicked(view)
@@ -173,7 +174,9 @@ class NoteActivity : AppCompatActivity() {
             })
 
             val findButton = Button(this)
-            findButton.text = "Find Item"
+            val icon2 = resources.getDrawable(R.drawable.ic_baseline_search_24, theme)
+            findButton.background = icon2
+            findButton.layoutParams = LinearLayout.LayoutParams(100, 100)
             findButton.id = count + 1        // id of find buttons are odd
             findButton.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(view: View) {
